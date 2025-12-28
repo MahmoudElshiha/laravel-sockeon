@@ -1,8 +1,8 @@
 # Laravel Sockeon
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sockeon/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/sockeon/laravel-sockeon)
-[![Total Downloads](https://img.shields.io/packagist/dt/sockeon/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/sockeon/laravel-sockeon)
-[![License](https://img.shields.io/packagist/l/sockeon/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/sockeon/laravel-sockeon)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/elshiha/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/elshiha/laravel-sockeon)
+[![Total Downloads](https://img.shields.io/packagist/dt/elshiha/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/elshiha/laravel-sockeon)
+[![License](https://img.shields.io/packagist/l/elshiha/laravel-sockeon.svg?style=flat-square)](https://packagist.org/packages/elshiha/laravel-sockeon)
 
 Laravel integration for [Sockeon](https://sockeon.com) WebSocket server with artisan commands for easy development and deployment.
 
@@ -26,7 +26,7 @@ Laravel integration for [Sockeon](https://sockeon.com) WebSocket server with art
 Install the package via Composer:
 
 ```bash
-composer require sockeon/laravel-sockeon
+composer require elshiha/laravel-sockeon
 ```
 
 The package will automatically register itself via Laravel's package auto-discovery.
