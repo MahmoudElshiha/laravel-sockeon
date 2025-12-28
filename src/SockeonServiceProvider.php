@@ -1,11 +1,11 @@
 <?php
 
-namespace MahmoudElshiha\LaravelSockeon;
+namespace Elshiha\LaravelSockeon;
 
 use Illuminate\Support\ServiceProvider;
-use MahmoudElshiha\LaravelSockeon\Commands\SockeonServeCommand;
-use MahmoudElshiha\LaravelSockeon\Commands\SockeonLogsCommand;
-use MahmoudElshiha\LaravelSockeon\Commands\SockeonMakeCommand;
+use Elshiha\LaravelSockeon\Commands\SockeonServeCommand;
+use Elshiha\LaravelSockeon\Commands\SockeonLogsCommand;
+use Elshiha\LaravelSockeon\Commands\SockeonMakeCommand;
 
 class SockeonServiceProvider extends ServiceProvider
 {

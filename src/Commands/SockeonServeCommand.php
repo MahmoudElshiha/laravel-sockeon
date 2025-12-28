@@ -1,6 +1,6 @@
 <?php
 
-namespace MahmoudElshiha\LaravelSockeon\Commands;
+namespace Elshiha\LaravelSockeon\Commands;
 
 use Illuminate\Console\Command;
 use Sockeon\Sockeon\Config\ServerConfig;
