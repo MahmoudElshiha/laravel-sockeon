@@ -18,7 +18,7 @@ Laravel integration for [Sockeon](https://sockeon.com) WebSocket server with art
 ## Requirements
 
 - PHP 8.1 or higher
-- Laravel 10.x or 11.x
+- Laravel 11.x or 12.x
 - Sockeon 2.0 or higher
 
 ## Installation
