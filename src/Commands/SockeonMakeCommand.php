@@ -1,6 +1,6 @@
 <?php
 
-namespace Sockeon\LaravelSockeon\Commands;
+namespace MahmoudElshiha\LaravelSockeon\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Attribute\AsCommand;

@@ -1,5 +1,5 @@
 {
-    "name": "sockeon/laravel-sockeon",
+    "name": "mahmoudelshiha/laravel-sockeon",
     "description": "Laravel integration for Sockeon WebSocket server with artisan commands",
     "keywords": [
         "laravel",
@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Sockeon\\LaravelSockeon\\": "src/"
+            "MahmoudElshiha\\LaravelSockeon\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Sockeon\\LaravelSockeon\\SockeonServiceProvider"
+                "MahmoudElshiha\\LaravelSockeon\\SockeonServiceProvider"
             ]
         }
     },
