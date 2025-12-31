@@ -31,7 +31,7 @@ composer require elshiha/laravel-sockeon
 
 The package will automatically register itself via Laravel's package auto-discovery.
 
-### Publish Configuration (Optional)
+### Publish Configuration
 
 Publish the configuration files:
 ```bash
@@ -203,11 +203,35 @@ Show custom number of lines:
 php artisan sockeon:logs --lines=100
 ```
 
+### 5. Refresh (Restart) the Server
+
+Restart the running WebSocket server without manually stopping it:
+
+```bash
+php artisan sockeon:refresh
+```
+
+This command will:
+- Gracefully stop the currently running server
+- Start a new server instance with the latest configuration
+- Maintain all registered controllers
+
+Output:
+```
+Stopping Sockeon server (PID: 12345)...
+Server stopped successfully.
+Starting new Sockeon server...
+Server restarted successfully with new PID: 12346
+```
+
+**Note:** The refresh command uses a PID file stored at `storage/sockeon.pid` to track the running server process.
+
 ## Available Commands
 
 | Command | Description |
 |---------|-------------|
 | `sockeon:serve` | Start the WebSocket server |
+| `sockeon:refresh` | Restart the running WebSocket server |
 | `sockeon:logs` | Display and tail server logs |
 | `sockeon:make` | Generate a WebSocket controller |
 

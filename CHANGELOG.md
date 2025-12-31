@@ -13,6 +13,8 @@ All notable changes to `laravel-sockeon` will be documented in this file.
 - Health check endpoint configuration
 - Queue file support for message persistence
 - Comprehensive documentation for all ServerConfig options
+- `sockeon:refresh` command to restart the running WebSocket server
+- PID file tracking (`storage/sockeon.pid`) for server process management
 
 ### Changed
 - ServerConfig now loaded from dedicated publishable file instead of inline creation

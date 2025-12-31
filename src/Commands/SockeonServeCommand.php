@@ -53,13 +53,28 @@ class SockeonServeCommand extends Command
         $this->info("Press Ctrl+C to stop");
         $this->newLine();
 
+        // Write PID to file for refresh command
+        $pidFile = storage_path('sockeon.pid');
+        file_put_contents($pidFile, getmypid());
+
+        // Register shutdown handler to remove PID file
+        register_shutdown_function(function () use ($pidFile) {
+            if (file_exists($pidFile)) {
+                @unlink($pidFile);
+            }
+        });
+
         // Start server
         try {
             $server->run();
         } catch (\Exception $e) {
             $this->error("Server error: " . $e->getMessage());
+            @unlink($pidFile); // Clean up PID file on error
             return Command::FAILURE;
         }
+
+        // Clean up PID file on normal exit
+        @unlink($pidFile);
 
         return Command::SUCCESS;
     }

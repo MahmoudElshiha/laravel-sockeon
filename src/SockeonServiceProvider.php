@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Elshiha\LaravelSockeon\Commands\SockeonServeCommand;
 use Elshiha\LaravelSockeon\Commands\SockeonLogsCommand;
 use Elshiha\LaravelSockeon\Commands\SockeonMakeCommand;
+use Elshiha\LaravelSockeon\Commands\SockeonRefreshCommand;
 
 class SockeonServiceProvider extends ServiceProvider
 {
@@ -30,6 +31,7 @@ class SockeonServiceProvider extends ServiceProvider
                 SockeonServeCommand::class,
                 SockeonLogsCommand::class,
                 SockeonMakeCommand::class,
+                SockeonRefreshCommand::class,
             ]);
 
             // Publish configuration
