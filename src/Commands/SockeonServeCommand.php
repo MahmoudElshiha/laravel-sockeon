@@ -27,18 +27,10 @@ class SockeonServeCommand extends Command
      */
     public function handle(): int
     {
-        $host = config('sockeon.host');
-        $port = config('sockeon.port');
-        $debug = config('sockeon.debug');
+        // Load ServerConfig from published config file or fallback to package default
+        $config = config('sockeon-server') ?? require __DIR__.'/../../config/sockeon-server.php';
 
-        // Create server configuration
-        $config = new ServerConfig([
-            'host' => $host,
-            'port' => $port,
-            'debug' => $debug
-        ]);
-
-        // Create server
+        // Create server with the loaded configuration
         $server = new Server($config);
 
         // Register controllers
@@ -51,6 +43,10 @@ class SockeonServeCommand extends Command
                 $this->warn("Controller not found: {$controllerClass}");
             }
         }
+
+        // Get host and port for console output
+        $host = $config->host ?? '0.0.0.0';
+        $port = $config->port ?? 8080;
 
         $this->info("Starting WebSocket server on ws://{$host}:{$port}");
         $this->info("Press Ctrl+C to stop");

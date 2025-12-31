@@ -33,11 +33,14 @@ The package will automatically register itself via Laravel's package auto-discov
 
 ### Publish Configuration (Optional)
 
+Publish the configuration files:
 ```bash
 php artisan vendor:publish --tag=sockeon-config
 ```
 
-This will create a `config/sockeon.php` file where you can customize your WebSocket server settings.
+This creates:
+- `config/sockeon.php` - Controllers and logging settings
+- `config/sockeon-server.php` - Full server configuration with CORS, rate limiting, and more
 
 ### Publish Stubs (Optional)
 
@@ -49,6 +52,8 @@ This allows you to customize the controller template used by `sockeon:make`.
 
 ## Configuration
 
+### Basic Configuration
+
 Add these variables to your `.env` file:
 
 ```env
@@ -58,7 +63,43 @@ SOCKEON_DEBUG=false
 SOCKEON_LOG_FILE=
 ```
 
-### Configuration Options
+### Advanced Server Configuration
+
+For advanced features like **CORS**, **rate limiting**, **authentication**, and **proxy support**, publish the configuration and edit `config/sockeon-server.php`:
+
+```bash
+php artisan vendor:publish --tag=sockeon-config
+```
+
+The `config/sockeon-server.php` file allows you to configure:
+
+#### Available Options
+
+**Basic Settings:**
+- `host`, `port`, `debug` - Server fundamentals
+- `queue_file` - Message persistence
+- `auth_key` - Authentication key
+- `health_check_path` - Health check endpoint
+
+**CORS Configuration:**
+- `allowed_origins` - Allowed origins (default: `['*']`)
+- `allowed_methods` - HTTP methods
+- `allowed_headers` - Allowed headers
+- `allow_credentials` - Allow credentials
+- `max_age` - Preflight cache duration
+
+**Rate Limiting:**
+- `enabled` - Enable/disable rate limiting
+- `maxHttpRequestsPerIp` - HTTP request limit per IP
+- `maxWebSocketMessagesPerClient` - WebSocket message limit
+- `maxConnectionsPerIp` - Connection limit per IP
+- `maxGlobalConnections` - Global connection limit
+- `whitelist` - IP whitelist
+
+**Security:**
+- `trust_proxy` - Trusted proxy IPs/CIDR ranges
+
+### Environment Variables
 
 | Option | Description | Default |
 |--------|-------------|---------|
@@ -66,6 +107,8 @@ SOCKEON_LOG_FILE=
 | `SOCKEON_PORT` | WebSocket server port | `8080` |
 | `SOCKEON_DEBUG` | Enable debug mode | `false` |
 | `SOCKEON_LOG_FILE` | Custom log file path | `storage/logs/sockeon-websocket.log` |
+| `SOCKEON_AUTH_KEY` | Authentication key | `null` |
+| `SOCKEON_RATE_LIMIT_ENABLED` | Enable rate limiting | `false` |
 
 ## Usage
 

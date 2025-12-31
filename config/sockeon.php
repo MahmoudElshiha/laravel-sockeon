@@ -3,19 +3,16 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Sockeon Server Configuration
+    | Sockeon Configuration
     |--------------------------------------------------------------------------
     |
-    | This configuration file contains settings for the Sockeon WebSocket
-    | server. The server runs independently from Laravel's HTTP server.
+    | This configuration file contains settings for Sockeon WebSocket features.
+    | For server configuration (host, port, CORS, rate limiting, etc.),
+    | publish and edit the sockeon-server.php file:
+    |
+    | php artisan vendor:publish --tag=sockeon-server
     |
     */
-
-    'host' => env('SOCKEON_HOST', '0.0.0.0'),
-
-    'port' => env('SOCKEON_PORT', 8080),
-
-    'debug' => env('SOCKEON_DEBUG', env('APP_DEBUG', false)),
 
     /*
     |--------------------------------------------------------------------------

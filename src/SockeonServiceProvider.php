@@ -35,6 +35,7 @@ class SockeonServiceProvider extends ServiceProvider
             // Publish configuration
             $this->publishes([
                 __DIR__.'/../config/sockeon.php' => config_path('sockeon.php'),
+                __DIR__.'/../config/sockeon-server.php' => config_path('sockeon-server.php'),
             ], 'sockeon-config');
 
             // Publish stubs
